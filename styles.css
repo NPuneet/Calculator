@@ -21,14 +21,14 @@ html {
 }
 .top input {
   height: 15.5vh;
-  width: 30vw;
+  width: 32vw;
   background-color: #181f32;
   box-sizing: border-box;
   border: none;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px #00000040;
   text-align: right;
-  padding: 1.3rem;
+  padding: 2rem;
   font-family: Segoe UI;
   font-size: 3.7rem;
   font-weight: 700;
@@ -42,8 +42,8 @@ html {
 }
 .button {
   display: grid;
-  height: 52vh;
-  width: 27.5vw;
+  height: 54vh;
+  width: 29.5vw;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
   column-gap: 15px;
@@ -51,8 +51,8 @@ html {
   padding: 25px 20px;
 }
 .button button {
-  height: 66px;
-  width: 90px;
+  height: 62px;
+  width: 85px;
   cursor: pointer;
   border-radius: 15px;
   border: none;
