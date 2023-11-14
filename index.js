@@ -1,67 +1,42 @@
 const input = document.querySelector("#input");
-const number7 = document
-  .querySelector("#number7")
-  .addEventListener("click", () => (input.value += 7));
-const number8 = document
-  .querySelector("#number8")
-  .addEventListener("click", () => (input.value += 8));
-const number9 = document
-  .querySelector("#number9")
-  .addEventListener("click", () => (input.value += 9));
+const numbers = document.querySelectorAll("Button");
+
+// Appending numbers and operators to input feild
+numbers.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const text = event.target.innerText;
+    if (button.classList.contains("number")) {
+      input.value += text;
+    } else if (button.classList.contains("operator")) {
+      a = text === "x" ? "*" : text;
+      operatorclick(a);
+    }
+  });
+});
+
+// logic for operators to not display at first
+function operatorclick(operator) {
+  if (input.value.length > 0) {
+    input.value += operator;
+  } else if (operator === "+" || operator === "*" || operator === "/") {
+    input.value = "";
+  }
+}
+
+// funcitonality of delete button
 const Delete = document
   .querySelector("#delete")
   .addEventListener("click", () => {
     const value = input.value;
     input.value = value.slice(0, -1);
   });
-const number4 = document
-  .querySelector("#number4")
-  .addEventListener("click", () => (input.value += 4));
-const number5 = document
-  .querySelector("#number5")
-  .addEventListener("click", () => (input.value += 5));
-const number6 = document
-  .querySelector("#number6")
-  .addEventListener("click", () => (input.value += 6));
-const operatorPlus = document
-  .querySelector("#operatorPlus")
-  .addEventListener("click", () => {
-    input.value > 0 ? (input.value += "+") : (input.value = "");
-  });
-const number1 = document
-  .querySelector("#number1")
-  .addEventListener("click", () => (input.value += 1));
-const number2 = document
-  .querySelector("#number2")
-  .addEventListener("click", () => (input.value += 2));
-const number3 = document
-  .querySelector("#number3")
-  .addEventListener("click", () => (input.value += 3));
-const operatorMinus = document
-  .querySelector("#operatorMinus")
-  .addEventListener("click", () => (input.value += "-"));
-const decimal = document
-  .querySelector("#decimal")
-  .addEventListener("click", () => (input.value += "."));
-const number0 = document
-  .querySelector("#number0")
-  .addEventListener("click", () => (input.value += 0));
-const operatorDivide = document
-  .querySelector("#operatorDivide")
-  .addEventListener("click", () => {
-    input.value > 0 ? (input.value += "/") : (input.value = "");
-  });
-const operatorMul = document
-  .querySelector("#operatorMul")
-  .addEventListener("click", () => {
-    input.value > 0 ? (input.value += "*") : (input.value = "");
-  });
+
+// functionality of reset button
 const reset = document
   .querySelector("#reset")
   .addEventListener("click", () => (input.value = ""));
-  const decimalPlaces = (number) =>{
-    return number ;
-  }
+
+// functionality of equals button
 const equals = document
   .querySelector("#equals")
   .addEventListener("click", () => {
